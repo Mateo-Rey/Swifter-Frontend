@@ -1,14 +1,35 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Login from './pages/Login';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
+import { AuthProvider } from "./contexts/AuthContext";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import DirectMessages from "./pages/DirectMessages"
+import Explore from "./pages/Explore"
 function App() {
   return (
     <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login/>}/>
-        
-      </Routes>
-    </Router>
+      <Router>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={
+              <PrivateRoute>
+                <Dashboard/>
+              </PrivateRoute>
+            }/>
+            <Route path="/direct-messages" element={
+            <PrivateRoute>
+              <DirectMessages/>
+            </PrivateRoute>
+            }/>
+            <Route path="/explore" element={
+            <PrivateRoute>
+              <Explore/>
+            </PrivateRoute>
+          }/>
+          </Routes>
+        </AuthProvider>
+      </Router>
     </>
   );
 }

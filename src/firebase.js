@@ -2,12 +2,12 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyCgwG5iBjKMmQFCOnFUhD9dbHe_qCsnY0s",
-  authDomain: "swifter-chat.firebaseapp.com",
-  projectId: "swifter-chat",
-  storageBucket: "swifter-chat.appspot.com",
-  messagingSenderId: "827100983239",
-  appId: "1:827100983239:web:ba8c89985ac17a89b2f3e2",
-});
+    apiKey: "AIzaSyBgHumMZaS3hIzaZXnpWRen6WpOpwgcU_U",
+    authDomain: "mrey-social-media-backend.firebaseapp.com",
+    projectId: "mrey-social-media-backend",
+    storageBucket: "mrey-social-media-backend.appspot.com",
+    messagingSenderId: "573558605936",
+    appId: "1:573558605936:web:9b13decd27cb3aee948cb5"
+  });
 
 export const auth = app.auth()
