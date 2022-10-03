@@ -5,14 +5,17 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import DirectMessages from "./pages/DirectMessages"
 import Explore from "./pages/Explore"
+
 function App() {
+
   return (
     <>
+    <div>
       <Router>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={
+            <Route path="/login" element={<Login/>} />
+            <Route path="/dashboard"  element={
               <PrivateRoute>
                 <Dashboard/>
               </PrivateRoute>
@@ -30,6 +33,7 @@ function App() {
           </Routes>
         </AuthProvider>
       </Router>
+      </div>
     </>
   );
 }
