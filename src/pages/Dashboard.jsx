@@ -4,9 +4,9 @@ import Searchbar from '../components/Searchbar.jsx'
 import Feed from '../components/Feed.jsx'
 import ActivityBar from '../components/ActivityBar.jsx'
 function Dashboard() {
-  const {logout} = useAuth()
+  
   return (
-    <div className='flex flex-col'>
+    <div className='flex scroll-smooth flex-col'>
       <Searchbar/>
       <Feed/>
       <ActivityBar/>
