@@ -2,7 +2,7 @@ import React from 'react'
 
 function Searchbar() {
   return (
-    <div>Searchbar</div>
+    <div className='fixed z-10'>Searchbar</div>
   )
 }
 

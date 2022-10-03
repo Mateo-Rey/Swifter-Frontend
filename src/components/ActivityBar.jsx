@@ -2,7 +2,7 @@ import React from 'react'
 
 function ActivityBar() {
   return (
-    <div>ActivityBar</div>
+    <div className='fixed bottom-0 z-10'>ActivityBar</div>
   )
 }
 
