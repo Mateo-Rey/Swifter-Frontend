@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
   }
@@ -43,7 +44,12 @@ export function AuthProvider({ children }) {
   function updatePassword(password) {
     return currentUser.updatePassword(password)
   }
-
+  function handleLogout() {
+    setIsLoggedIn(false)
+  }
+  function handleLogin() {
+    setIsLoggedIn(true)
+  }
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
@@ -61,7 +67,10 @@ export function AuthProvider({ children }) {
     logout,
     resetPassword,
     updateEmail,
-    updatePassword
+    updatePassword,
+    handleLogin,
+    handleLogout,
+    isLoggedIn
   }
 
   return (

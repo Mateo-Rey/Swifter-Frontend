@@ -1,27 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import { useAuth } from "../contexts/AuthContext";
-import Searchbar from "../components/Searchbar.jsx";
 import Feed from "../components/Feed.jsx";
-import ActivityBar from "../components/ActivityBar.jsx";
-import MobileSettings from "../components/MobileSettings";
-import SuggestedFollowers from "../components/SuggestedFollowers";
-import Settings from "../components/Settings";
+import Modal from "../components/Modal";
+import Header from "../components/Header";
 function Dashboard() {
-  
+  const {currentUser} = useAuth()
   return (
-    <div>
-      <div className="md:hidden">
-      <MobileSettings/>
-      </div>
-      <Settings/>
-     
-      <div className="flex justify-start justify-self-center items-center scroll-smooth flex-col">
-        <Searchbar />
-        <Feed />
-        <ActivityBar />
-      </div>
-      <SuggestedFollowers />
-    </div>
+    <>
+    <Header/>
+    <Feed/>
+    <Modal/>
+    </>
   );
 }
 
