@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function DirectMessages() {
   return (
-    <div>DirectMessages</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

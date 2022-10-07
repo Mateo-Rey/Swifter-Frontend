@@ -4,14 +4,15 @@ import Feed from "../components/Feed.jsx";
 import Modal from "../components/Modal";
 import Header from "../components/Header";
 function Dashboard() {
-  const {currentUser} = useAuth()
+  const { currentUser } = useAuth();
+  console.log(currentUser)
   return (
     <>
-    <div className="md:flex md:flex-col md:items-center">
-    <Header/>
-    <Feed/>
-    <Modal/>
-    </div>
+      <div className="md:flex md:flex-col md:items-center">
+        <Header />
+        <Feed />
+        <Modal />
+      </div>
     </>
   );
 }
