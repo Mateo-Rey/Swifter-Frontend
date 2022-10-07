@@ -9,7 +9,7 @@ import { useAuth } from "../contexts/AuthContext";
 function Header() {
     const {logout, googleLogin, isLoggedIn} = useAuth()
   return (
-    <div className="border-b fixed w-full flex justify-around shadow-sm bg-white">
+    <div className="border-b scroll-smooth px-2 fixed top-1 md:top-0 w-full flex justify-around shadow-sm bg-white">
             <div className="hidden w-96 h-11 mt-1 sm:flex relative">
           <div className="absolute w-6 ml-1 h-full flex items-center">
             <AiOutlineSearch size={50} />
@@ -20,7 +20,7 @@ function Header() {
             placeholder="Search"
           />
         </div>
-        
+            <div className="flex justify-around w-[80vw] my-1">
             <button>
             <BiHome size={30}/>
             </button>
@@ -39,7 +39,10 @@ function Header() {
             <button>
 
             </button>
+            </div>
+            <div className="flex -translate-y-0.5 md:-translate-x-3 text-blue-500">
             {isLoggedIn ? <button onClick={logout}>Sign Out</button>: <button onClick={googleLogin}>Login</button>}
+            </div>
         
     </div>
   );

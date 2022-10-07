@@ -6,21 +6,21 @@ function Posts() {
         id: '123',
         username:"Joe Doe",
         profilePic: logo,
-        postPhoto: profile,
+        postPhoto: logo,
         caption: 'Hello from the caption'
 
     }, {
         id: '234',
         username:"Mike Jones",
         profilePic: logo,
-        postPhoto: profile,
+        postPhoto: logo,
         caption: 'Hello from the 2nd caption'
 
     }]
   return (
-    <div>{posts.map((post) => {
-        <Post
-        key={id}
+    <div className='mt-1 mx-1 max-w-[690px] self-center'>{posts?.map((post) => {
+       return <Post
+        key={post.id}
         username={post.username}
         profilePice={post.profilePic}
         postPhoto={post.postPhoto}

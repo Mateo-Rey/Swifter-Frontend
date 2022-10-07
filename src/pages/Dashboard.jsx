@@ -7,9 +7,11 @@ function Dashboard() {
   const {currentUser} = useAuth()
   return (
     <>
+    <div className="md:flex md:flex-col md:items-center">
     <Header/>
     <Feed/>
     <Modal/>
+    </div>
     </>
   );
 }
