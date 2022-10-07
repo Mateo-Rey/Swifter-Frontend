@@ -7,7 +7,7 @@ import {MdOutlineExplore} from 'react-icons/md'
 import {AiOutlineHeart} from 'react-icons/ai'
 import { useAuth } from "../contexts/AuthContext";
 function Header() {
-    const {setIsLoggedIn, isLoggedIn} = useAuth()
+    const {logout, googleLogin, isLoggedIn} = useAuth()
   return (
     <div className="border-b fixed w-full flex justify-around shadow-sm bg-white">
             <div className="hidden w-96 h-11 mt-1 sm:flex relative">
@@ -36,6 +36,10 @@ function Header() {
             <button>
                 <AiOutlineHeart size={30}/>
             </button>
+            <button>
+
+            </button>
+            {isLoggedIn ? <button onClick={logout}>Sign Out</button>: <button onClick={googleLogin}>Login</button>}
         
     </div>
   );

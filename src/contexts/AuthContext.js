@@ -24,13 +24,15 @@ export function AuthProvider({ children }) {
     const provider = new GoogleAuthProvider();
     const results = await signInWithPopup(auth, provider)
     setCurrentUser(results)
+    setIsLoggedIn(true)
     navigate("/dashboard")
     
     return 0;
   }
   function logout() {
     auth.signOut()
-    return navigate("/login")
+    setIsLoggedIn(false)
+    return navigate("/dashboard")
   }
 
   function resetPassword(email) {
