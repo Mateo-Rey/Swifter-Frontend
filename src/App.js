@@ -15,7 +15,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Routes>
-              
+              <Route path='/' element={<Navigate to='/dashboard'/>}/>
               <Route index path="/dashboard" element={<Dashboard />} />
               <Route
                 path="/direct-messages"
