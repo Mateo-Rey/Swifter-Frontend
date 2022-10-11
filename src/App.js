@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import DirectMessages from "./pages/DirectMessages";
 import Explore from "./pages/Explore";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         
         <Router>
           <AuthProvider>
+            
+
             <Routes>
               <Route path='/' element={<Navigate to='/dashboard'/>}/>
               <Route index path="/dashboard" element={<Dashboard />} />

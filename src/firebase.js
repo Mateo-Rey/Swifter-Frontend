@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-
+import { getStorage } from "firebase/storage";
 const app = firebase.initializeApp({
     apiKey: "AIzaSyBgHumMZaS3hIzaZXnpWRen6WpOpwgcU_U",
     authDomain: "mrey-social-media-backend.firebaseapp.com",
@@ -11,3 +11,4 @@ const app = firebase.initializeApp({
   });
 
 export const auth = app.auth()
+export const storage = getStorage(app)

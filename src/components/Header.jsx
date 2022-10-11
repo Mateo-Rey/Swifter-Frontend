@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import {BiHome} from 'react-icons/bi'
 import {TbMessageCircle2} from 'react-icons/tb'
@@ -7,11 +7,15 @@ import {MdOutlineExplore} from 'react-icons/md'
 import {AiOutlineHeart} from 'react-icons/ai'
 import { useAuth } from "../contexts/AuthContext";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import AddPost from "./AddPost";
 function Header() {
     const {logout, googleLogin, currentUser} = useAuth()
     const navigate = useNavigate();
+    const [show, setShow] = useState(false)
   return (
-    <div className="border-b scroll-smooth px-2 fixed top-1 md:top-0 w-full flex justify-around shadow-sm bg-white">
+    <>
+    <AddPost show={show} setShow={setShow}/>
+    <div className="border-b scroll-smooth px-2 bg-white fixed top-0 w-full flex justify-around shadow-sm">
             <div className="hidden w-96 h-11 mt-1 sm:flex relative">
           <div className="absolute w-6 ml-1 h-full flex items-center">
             <AiOutlineSearch size={50} />
@@ -29,7 +33,7 @@ function Header() {
             <button onClick={() => navigate('/direct-messages')}>
                 <TbMessageCircle2 size={30}/>
             </button>
-            <button>
+            <button onClick={() => setShow(true)}>
                 <CgAddR size={30}/>
             </button>
             <button onClick={() => navigate('/explore')}>
@@ -42,11 +46,13 @@ function Header() {
 
             </button>
             </div>
-            <div className="flex -translate-y-0.5 md:-translate-x-3 text-blue-500">
+            <div className="flex -translate-y-0.5 md:-translate-x-3 text-blue-700">
             {currentUser ? <button onClick={logout}>Sign Out</button>: <button onClick={googleLogin}>Login</button>}
             </div>
         
     </div>
+    
+    </>
   );
 }
 

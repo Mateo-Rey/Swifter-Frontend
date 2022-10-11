@@ -6,7 +6,9 @@ function DirectMessages() {
   return (
     <div>
       <Header/>
+      
       <div className='fixed left-0 top-12 w-full h-full flex md:flex-row'>
+      
       <ContactBar/>
       <ChatRoom/>
       </div>
